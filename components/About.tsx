@@ -24,7 +24,7 @@ export default function About({ pageInfo }: Props) {
       className="h-screen flex relative flex-col text-center md:text-left md:flex-row 
     max-w-7xl px-10 md:pt-0 justify-evenly mx-auto items-center pt-10"
     >
-      <h3 className="absolute top-20 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="absolute top-20 uppercase tracking-[20px] text-gray-500 text-lg md:text-2xl ml-4 text-center w-full">
         About
       </h3>
       <motion.img
@@ -42,15 +42,15 @@ export default function About({ pageInfo }: Props) {
         viewport={{ once: true }}
         src={urlFor(pageInfo?.profilePic).url()}
         alt="Dumebi's picture"
-        className="w-64 h-64 -mb-20 md:mb-0 object-cover  flex-shrink rounded-full 
+        className="w-52 h-52 -mb-20 md:mb-0 object-cover  flex-shrink rounded-full 
           md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h[600px] xl:rounded-lg "
       />
       <div className="space-y-10 px-0 md:px-10">
-        <h4 className="text-4xl font-semibold">
+        <h4 className="text-2xl md:text-4xl font-semibold">
           Get to <span className="decoration-green-700/70 underline">know</span>{" "}
           me
         </h4>
-        <p className="text-base xl:text-lg">
+        <p className="text-xs md:text-base xl:text-lg">
           {pageInfo?.backgroundInformation}
         </p>
       </div>

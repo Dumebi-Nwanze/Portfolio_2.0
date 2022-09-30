@@ -20,14 +20,14 @@ export default function Experience({ experiences }: Props) {
         duration: 1.2,
       }}
       className="h-screen flex relative overflow-hidden flex-col text-left md:flex-row 
-    max-w-full px-10 justify-evenly mx-auto items-center"
+    max-w-full px-5 md:px-10 justify-evenly mx-auto items-center"
     >
-      <h3 className="absolute top-20 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="absolute top-20 uppercase tracking-[20px] text-gray-500 text-lg md:text-2xl ml-4 text-center">
         Experience
       </h3>
       <div
         className="w-full flex space-x-5 p-10 mt-36 overflow-x-scroll snap-x snap-mandatory
-       scrollbar scrollbar-track-gray-500 scrollbar-thumb-green-500"
+       scrollbar-thin md:scrollbar scrollbar-track-gray-500 scrollbar-thumb-green-500"
       >
         {experiences
           .sort((a, b) => {

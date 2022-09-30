@@ -1,4 +1,4 @@
-import type { GetStaticProps, NextPage } from "next";
+import type { GetServerSideProps, GetStaticProps } from "next";
 import Head from "next/head";
 import About from "../components/About";
 import ContactMe from "../components/ContactMe";
@@ -9,7 +9,6 @@ import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import Link from "next/link";
 import Image from "next/image";
-import { type } from "os";
 import {
   Experience as Experiences,
   PageInfo,
@@ -35,7 +34,7 @@ const Home = ({ projects, pageInfo, experiences, skills, socials }: Props) => {
   return (
     <div
       className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory 
-    overflow-x-hidden  z-0 overflow-y-scroll scrollbar scrollbar-track-gray-500 scrollbar-thumb-green-700"
+    overflow-x-hidden  z-0 overflow-y-scroll scrollbar-thin md:scrollbar scrollbar-track-gray-500 scrollbar-thumb-green-700"
     >
       <Head>
         <title>Dumebi 2.0</title>
@@ -81,7 +80,7 @@ const Home = ({ projects, pageInfo, experiences, skills, socials }: Props) => {
 
 export default Home;
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
   const skills: Skill[] = await fetchSkills();
   const experiences: Experiences[] = await fetchExperiences();
@@ -96,7 +95,5 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       projects,
       socials,
     },
-
-    revalidate: 10,
   };
 };

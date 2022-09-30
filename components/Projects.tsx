@@ -23,7 +23,7 @@ export default function Projects({ projects }: Props) {
       className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row 
       max-w-full justify-evenly mx-auto items-center z-0 pt-8"
     >
-      <h3 className="absolute top-20 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="absolute top-20 uppercase tracking-[20px] text-gray-500 text-lg md:text-2xl ml-4 text-center">
         Projects
       </h3>
       <div
@@ -48,22 +48,23 @@ export default function Projects({ projects }: Props) {
                 viewport={{ once: true }}
                 src={urlFor(project.image).url()}
                 alt="Project image"
-                className=" xl:w-[600px] xl:h-[350px]"
+                className=" xl:w-[700px] xl:h-[350px]"
               />
               <div className="space-y-5 xl:space-y-10 px-0 md:px:10 max-w-6xl flex flex-col">
                 <h4 className="text-3xl xl:text-3xl font-semibold text-center">
                   <span className="underline decoration-green-700/70">
-                    Case Study {index + 1} of {projects.length}:
+                    Case Study <span className="font-bold">{index + 1}</span> of{" "}
+                    {projects.length}:
                   </span>{" "}
                   {project.title}
                 </h4>
-                <p className="text-base  xl:text-lg text-center md:text-left">
+                <p className="text-xs md:text-base  xl:text-lg text-center md:text-left">
                   {project.summary}
                 </p>
                 <div className="self-center space-x-10">
                   <Link href={project.linkToBuild}>
                     <button
-                      className="px-8 py-4 bg-green-700 font-semibold rounded-lg cursor-pointer 
+                      className="px-4 py-2 md:px-6 md:py-3 bg-green-700 font-semibold text-sm md:text-base rounded-lg cursor-pointer 
                   hover:bg-green-700/70 transition-all"
                     >
                       Github Repo
@@ -71,7 +72,7 @@ export default function Projects({ projects }: Props) {
                   </Link>
                   <Link href={project.linkToDemo}>
                     <button
-                      className="px-8 py-4 bg-green-700 font-semibold rounded-lg cursor-pointer 
+                      className="px-4 py-2 md:px-6 md:py-3 bg-green-700 font-semibold text-sm md:text-base rounded-lg cursor-pointer 
                   hover:bg-green-700/70 transition-all"
                     >
                       Live Demo

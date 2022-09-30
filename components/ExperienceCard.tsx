@@ -12,7 +12,7 @@ export default function ExperienceCard({ experience }: Props) {
   return (
     <article
       className="flex flex-col rounded-lg items-center  flex-shrink-0 
-    w-[400px] md:w-[500px] xl:w-[550px] xl:h-[580px] snap-center bg-[#292929] p-10 xl:p-5
+    w-[400px] md:w-[500px] xl:w-[550px] xl:h-[600px] snap-center bg-[#292929] p-10 xl:p-5
     opacity-40 hover:opacity-100 transition-opacity ease-in-out duration-300 cursor-pointer overflow-hidden overflow-y-scroll 
       scrollbar-track-gray-500 scrollbar-thumb-green-700 scrollbar-thin"
     >
@@ -29,7 +29,7 @@ export default function ExperienceCard({ experience }: Props) {
         src={urlFor(experience?.companyImage).url()}
         alt="Comapny Logo"
       />
-      <div className="px-0 md:px-10 space-y-2">
+      <div className="px-10 space-y-2">
         <h4 className="text-3xl font-light">{experience.jobTitle}</h4>
         <p className="font-bold text-xl mt-1">{experience.company}</p>
         <div className="flex space-x-2 my-2">
